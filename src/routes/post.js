@@ -15,6 +15,7 @@ router.get('/:postId', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
+  return res.send('post route hit now post');
   const post = await req.context.models.Post.create({
     text: req.body.text,
     user: req.context.me.id,

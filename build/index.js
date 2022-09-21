@@ -1,5 +1,17 @@
 'use strict';
 
+var _promise = require('babel-runtime/core-js/promise');
+
+var _promise2 = _interopRequireDefault(_promise);
+
+var _regenerator = require('babel-runtime/regenerator');
+
+var _regenerator2 = _interopRequireDefault(_regenerator);
+
+var _asyncToGenerator2 = require('babel-runtime/helpers/asyncToGenerator');
+
+var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
+
 require('dotenv/config');
 
 var _cors = require('cors');
@@ -22,8 +34,6 @@ var _models2 = _interopRequireDefault(_models);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
-
 var app = (0, _express2.default)();
 
 // MIDDLEWARE
@@ -31,8 +41,8 @@ app.use(_express2.default.json());
 app.use(_express2.default.urlencoded({ extended: true }));
 app.use((0, _cors2.default)());
 app.use(function () {
-  var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(req, res, next) {
-    return regeneratorRuntime.wrap(function _callee$(_context) {
+  var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(req, res, next) {
+    return _regenerator2.default.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
@@ -71,8 +81,8 @@ app.use('/comments', _routes2.default.comment);
 // CONNECT TO DATABASE
 var eraseDatabaseOnSync = true;
 
-(0, _models.connectDb)().then(_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
-  return regeneratorRuntime.wrap(function _callee2$(_context2) {
+(0, _models.connectDb)().then((0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee2() {
+  return _regenerator2.default.wrap(function _callee2$(_context2) {
     while (1) {
       switch (_context2.prev = _context2.next) {
         case 0:
@@ -82,7 +92,7 @@ var eraseDatabaseOnSync = true;
           }
 
           _context2.next = 3;
-          return Promise.all([_models2.default.User.deleteMany({}), _models2.default.Post.deleteMany({}), _models2.default.Comment.deleteMany({})]);
+          return _promise2.default.all([_models2.default.User.deleteMany({}), _models2.default.Post.deleteMany({}), _models2.default.Comment.deleteMany({})]);
 
         case 3:
 
@@ -103,9 +113,9 @@ var eraseDatabaseOnSync = true;
 })));
 
 var createUsersWithPosts = function () {
-  var _ref3 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+  var _ref3 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee3() {
     var comment1, comment2, comment3, user1, user2, post1, post2, post3, post4, post5, post6;
-    return regeneratorRuntime.wrap(function _callee3$(_context3) {
+    return _regenerator2.default.wrap(function _callee3$(_context3) {
       while (1) {
         switch (_context3.prev = _context3.next) {
           case 0:

@@ -12,6 +12,7 @@ const PostSchema = new mongoose.Schema(
     },
     user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
     comments: [{ type: Schema.Types.ObjectId, ref: 'Comment' }],
+    display: { type: Boolean, default: true },
   },
   { timestamps: true }
 );

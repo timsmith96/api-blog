@@ -39,7 +39,7 @@ connectDb().then(async () => {
     createUsersWithPosts();
   }
 
-  app.listen(3000, () =>
+  app.listen(4000, () =>
     console.log(`Example app listening on port ${process.env.PORT}!`)
   );
 });
@@ -88,6 +88,7 @@ const createUsersWithPosts = async () => {
     
     Nesciunt doloremque saepe delectus enim facilis numquam dolorem earum, deleniti cum ipsum culpa a minima cumque ut ullam animi, optio voluptas eveniet pariatur dolores? Sed quis deleniti praesentium, minus aperiam optio minima vitae pariatur corrupti id veniam atque reprehenderit eum quae doloribus, rem neque fugiat at necessitatibus? Quibusdam animi repellendus velit magni, pariatur eum, iste ea omnis cum nostrum aspernatur beatae fuga dolorum earum possimus veniam nesciunt aut saepe perspiciatis debitis impedit explicabo repudiandae. At tenetur necessitatibus corporis eos!`,
     user: user2.id,
+    comments: [comment1.id, comment2.id],
   });
 
   const post3 = new models.Post({

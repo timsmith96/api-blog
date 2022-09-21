@@ -1,10 +1,9 @@
-import { v4 as uuidv4 } from 'uuid';
 import { Router } from 'express';
 
 const router = Router();
 
 router.get('/', async (req, res) => {
-  const posts = await req.context.models.Post.find().populate('user');
+  const posts = await req.context.models.Post.find({}).populate('user');
   return res.send(posts);
 });
 
@@ -21,6 +20,15 @@ router.post('/', async (req, res) => {
     user: req.context.me.id,
   });
 
+  return res.send(post);
+});
+
+router.post('/:postId', async (req, res) => {
+  const post = await req.context.models.Post.findById(req.params.postId);
+  post.text = req.body.text;
+  post.title = req.body.title;
+  post.display = req.body.display;
+  await post.save();
   return res.send(post);
 });
 

@@ -28,6 +28,7 @@ router.post('/:postId', async (req, res) => {
   } catch (e) {
     console.error(e);
   }
+  res.end();
 });
 
 router.delete('/:commentId', async (req, res) => {

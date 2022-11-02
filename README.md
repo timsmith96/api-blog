@@ -19,5 +19,5 @@ This project uses:
 
 ## Demo
 
-Demo of the front-end client site: https://resplendent-lamington-463564.netlify.app/
-Demo of the fron-end admin site: https://voluble-crostata-68c14b.netlify.app/
+- Demo of the front-end client site: https://resplendent-lamington-463564.netlify.app/
+- Demo of the fron-end admin site: https://voluble-crostata-68c14b.netlify.app/

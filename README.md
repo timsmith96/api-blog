@@ -14,8 +14,10 @@ This project uses:
 
 ## Features
 
--Routes and controllers allowing users to 
+- Routes and controllers allowing the client applications (given above) to fetch all the blog posts, with their associated comments
+- Routes and controllers allowing the admin client to make changes to blog posts 
 
 ## Demo
 
-https://resplendent-lamington-463564.netlify.app/
+Demo of the front-end client site: https://resplendent-lamington-463564.netlify.app/
+Demo of the fron-end admin site: https://voluble-crostata-68c14b.netlify.app/
